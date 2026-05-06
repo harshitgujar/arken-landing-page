@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRAGILE BASE™ - Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="project.css">
+</head>
+<body class="project-page">
+    <div class="hocl-header-wrapper">
+        <a href="index.html" class="back-to-home">
+            <img src="asset/bacc.png" alt="Back to Home" class="back-img">
+        </a>
+        
+        <div class="hocl-title-container">
+            <h1 class="hocl-title">FRAGILE<br>BASE™</h1>
+            <div class="hocl-pills-overlay">
+                <span class="hocl-pill glass-pill">BRAND DIRECTION</span>
+                <span class="hocl-pill glass-pill">WEB DESIGN</span>
+                <span class="hocl-pill glass-pill">SHOPIFY DEVELOPMENT</span>
+            </div>
+        </div>
+        
+        <p class="hocl-subtitle">MAR. 2025 &nbsp;.&nbsp; CLOTHING BRAND</p>
+    </div>
+    
+    <div class="hocl-content">
+        <video src="./asset/digital-dominance/1.mp4" autoplay muted loop playsinline class="hocl-full-video"></video>
+        
+        <div class="hocl-split-layout">
+            <img src="./asset/digital-dominance/2.avif" alt="Slide 2" class="hocl-split-img">
+            <img src="./asset/digital-dominance/3.avif" alt="Slide 3" class="hocl-split-img">
+        </div>
+        
+        <img src="./asset/digital-dominance/4.avif" alt="Slide 4" class="hocl-full-img">
+        
+        <div class="hocl-split-layout">
+            <img src="./asset/digital-dominance/5.avif" alt="Slide 5" class="hocl-split-img">
+            <img src="./asset/digital-dominance/6.avif" alt="Slide 6" class="hocl-split-img">
+        </div>
+        
+        <img src="./asset/digital-dominance/7.avif" alt="Slide 7" class="hocl-full-img">
+        <img src="./asset/digital-dominance/8.avif" alt="Slide 8" class="hocl-full-img">
+        
+        <div class="hocl-split-layout">
+            <img src="./asset/digital-dominance/9.avif" alt="Slide 9" class="hocl-split-img">
+            <img src="./asset/digital-dominance/10.avif" alt="Slide 10" class="hocl-split-img">
+        </div>
+        
+        <img src="./asset/digital-dominance/11.avif" alt="Slide 11" class="hocl-full-img">
+        <img src="./asset/digital-dominance/12.avif" alt="Slide 12" class="hocl-full-img">
+    </div>
+    
+    <!-- Footer directly from index.html -->
+    <footer class="footer-section" id="footer" style="padding-top: 15vh;">
+        <div class="footer-top">
+            <div class="footer-vision-left">WHERE VISION MEETS ABSOLUTE<br>EXECUTION.</div>
+            <div class="footer-vision-right">WHERE VISION MEETS ABSOLUTE<br>EXECUTION.</div>
+        </div>
+        <div class="footer-center">
+            <img src="./asset/mascot (1).png" alt="Lets Work Together Graphic" class="footer-mascot">
+        </div>
+        <div class="footer-email">
+            <a href="mailto:ARKENCREATIVES@GMAIL.COM">ARKENCREATIVES@GMAIL.COM</a>
+        </div>
+        <div class="footer-bottom">
+            <a href="https://x.com/ArkenCreatives" class="footer-link" target="_blank">X</a>
+            <a href="https://www.instagram.com/arkencreatives?igsh=NnJiOGQyNXk4ejZy" class="footer-link" target="_blank">INSTAGRAM</a>
+            <a href="#" class="footer-link">LINKEDIN</a>
+            <a href="#" class="footer-link">PRIVACY & COOKIES POLICY</a>
+            <a href="#" class="footer-btn">BACK TO TOP</a>
+        </div>
+    </footer>
+
+    <script>
+        const backBtn = document.querySelector('.back-to-home');
+        let scrollTimeout;
+        backBtn.classList.add('visible');
+        window.addEventListener('scroll', () => {
+            backBtn.classList.remove('visible');
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                backBtn.classList.add('visible');
+            }, 400);
+        });
+    </script>
+</body>
+</html>

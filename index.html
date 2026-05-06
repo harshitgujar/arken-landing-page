@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arken Agency | Peak Performance UI/UX, Branding & AI Development</title>
+    <meta name="description" content="Arken Agency builds dominant brands through elite UI/UX, Web Dev, and AI Automation. We turn vision into high-performance reality. Start your dominance today!">
+    <meta name="keywords" content="AI UI/UX Design, Generative AI Branding, React Development, Flutter AI Apps, AI Automation Agency">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arkencreatives.com/">
+    <meta property="og:title" content="Arken Agency | Peak Performance UI/UX & AI">
+    <meta property="og:description" content="Weaving digital fabrics into high-performance reality through AI-driven design and automation.">
+    <meta property="og:image" content="./asset/Arken_Title_Logo.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Arken Agency",
+      "url": "https://arkencreatives.com/",
+      "logo": "https://arkencreatives.com/asset/Arken_Title_Logo.png",
+      "description": "Tech-creative firm specializing in UI/UX Design, Branding & Identity, AI Automation, App Dev, and Web Dev.",
+      "sameAs": [
+        "https://x.com/ArkenCreatives",
+        "https://www.instagram.com/arkencreatives",
+        "https://www.linkedin.com/company/arken-creatives/"
+      ],
+      "knowsAbout": [
+        "UI/UX Design",
+        "Branding & Identity",
+        "AI Automation",
+        "App Development",
+        "Web Development",
+        "React",
+        "Next.js",
+        "Flutter",
+        "LLMs",
+        "Glassmorphism UI"
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- LOADING SCREEN -->
+    <div class="loader-overlay" id="loader">
+        <img src="./asset/logoreal.svg" alt="Arken Logo" class="loader-logo">
+        
+        <div class="loader-center">
+            <img src="./asset/charac.png" alt="Mascot" class="loader-mascot">
+            <p class="loader-instruction">
+                WEAVING THE DIGITAL FABRIC OF YOUR VISION<br>
+                INTO A HIGH-PERFORMANCE REALITY.
+            </p>
+        </div>
+
+        <div class="loader-percentage" id="loaderPercentage">0%</div>
+    </div>
+
+    <div class="hero-container" id="home">
+        <video autoplay muted loop playsinline webkit-playsinline preload="auto" class="hero-video">
+            <source src="./asset/watermark-removed-video.mp4" type="video/mp4">
+        </video>
+        <header class="header">
+            <h1 class="headline">PEAK PERFORMANCE STARTS HERE.</h1>
+            <p class="subheadline">
+                WE DON'T JUST LAUNCH CAMPAIGNS; WE BUILD ENDURING BRAND IDENTITIES<br>
+                THAT COMMAND ATTENTION, EARN LOYALTY, AND STAND THE TEST OF TIME IN<br>
+                A CROWDED DIGITAL LANDSCAPE.
+            </p>
+        </header>
+
+        <nav class="nav-bar">
+            <a href="#home" class="nav-button">HOME</a>
+            <a href="#projects" class="nav-button">PROJECTS</a>
+            <a href="#services" class="nav-button">SERVICES</a>
+            <a href="#team" class="nav-button">TEAM</a>
+            <a href="#footer" class="nav-button">CONTACT</a>
+        </nav>
+
+        <div class="logo-container">
+            <picture>
+                <source srcset="./asset/Arken_Title_Logo.avif" type="image/avif">
+                <img src="./asset/Arken_Title_Logo.png" alt="Arken Logo" class="logo-image">
+            </picture>
+        </div>
+    </div>
+
+    <!-- Secondary Floating Nav (appears after hero) -->
+    <nav class="floating-nav" id="floatingNav">
+        <a href="#home" class="nav-button">HOME</a>
+        <a href="#projects" class="nav-button">PROJECTS</a>
+        <a href="#services" class="nav-button">SERVICES</a>
+        <a href="#team" class="nav-button">TEAM</a>
+        <a href="#footer" class="nav-button">CONTACT</a>
+    </nav>
+
+    <!-- NEW PROJECTS SECTION -->
+    <section class="projects-section" id="projects">
+        <div class="projects-header">
+            <h2 class="projects-title">PROJECTS</h2>
+            <picture>
+                <source srcset="./asset/what_we_do.avif" type="image/avif">
+                <img src="./asset/what_we_do.png" alt="What We Do" class="what-we-do-img">
+            </picture>
+        </div>
+
+        <div class="projects-carousel" id="projectCarousel">
+            <div class="project-card active" onclick="setProject(this, 'hocl-labs.html')">
+                <img src="./asset/hocl/cover_image.avif" alt="HOCL LABS" class="project-img">
+                <p class="project-name">HOCL LABS</p>
+            </div>
+            <div class="project-card" onclick="setProject(this, 'aesthetic-origins.html')">
+                <img src="./asset/arken-archive/cover_image.avif" alt="Aesthetic Origins" class="project-img">
+                <p class="project-name">AESTHETIC ORIGINS</p>
+            </div>
+            <div class="project-card" onclick="setProject(this, 'fragile-base.html')">
+                <img src="./asset/digital-dominance/cover_image.avif" alt="Fragile Base" class="project-img">
+                <p class="project-name">FRAGILE BASE</p>
+            </div>
+        </div>
+
+        <a href="#" class="see-all-btn">SEE ALL PROJECTS</a>
+    </section>
+
+    <!-- NEW ABOUT / ILLUSTRATION SECTION -->
+    <section class="about-section">
+        <div class="about-content">
+            <div class="about-text-container">
+                <img src="./asset/illustration.png" alt="Illustration" class="about-illustration">
+                <p class="about-text">
+                    WE ARE FOR THE FOUNDERS WHO STAY UP LATE OBSESSED<br>
+                    WITH THE "HOW." WE ARE FOR THE LEADERS WHO DEMAND<br>
+                    MORE THAN JUST "EXPOSURE"—THEY DEMAND DOMINANCE.<br>
+                    WE ARE FOR THE VISIONARIES WHO KNOW THAT A GREAT<br>
+                    IDEA IS WORTHLESS WITHOUT A RELENTLESS MACHINE TO<br>
+                    DRIVE IT FORWARD.
+                </p>
+            </div>
+            <img src="./asset/logo_reference.png" alt="Arken Secondary Logo" class="about-logo">
+        </div>
+    </section>
+
+    <!-- NEW SERVICES SECTION -->
+    <section class="services-section" id="services">
+        <div class="services-header">
+            <h2 class="projects-title">SERVICES</h2>
+            <picture>
+                <source srcset="./asset/whatwecando.avif" type="image/avif">
+                <img src="./asset/whatwecando.png" alt="What We Can Do" class="what-we-do-img">
+            </picture>
+        </div>
+
+        <div class="services-list">
+            <div class="service-item" onclick="toggleService(this)">
+                <div class="service-main">
+                    <span class="service-number">01</span>
+                    <span class="service-name">UI/UX DESIGN</span>
+                    <img src="./asset/tag.png" alt="Tag" class="service-tag">
+                </div>
+                <div class="service-desc-wrapper">
+                    <div class="service-desc">
+                        WE CRAFT IMMERSIVE DIGITAL JOURNEYS SPECIALIZING IN GLASSMORPHISM UI AND INTUITIVE NAVIGATION. OUR DESIGNS DON'T JUST LOOK GOOD—THEY DRIVE ENGAGEMENT THROUGH CALCULATED USER BEHAVIOR ANALYSIS.
+                    </div>
+                </div>
+            </div>
+            <div class="service-item" onclick="toggleService(this)">
+                <div class="service-main">
+                    <span class="service-number">02</span>
+                    <span class="service-name">BRANDING</span>
+                    <img src="./asset/tag.png" alt="Tag" class="service-tag">
+                </div>
+                <div class="service-desc-wrapper">
+                    <div class="service-desc">
+                        BEYOND LOGOS, WE BUILD LEGACIES. WE SPECIALIZE IN GLASSMORPHISM UI AND MODERN DESIGN SYSTEMS TO ENSURE YOUR BRAND RESONATES WITH ABSOLUTE AUTHORITY. ARKEN AGENCY PROVIDES BRANDING AND IDENTITY FOR VISIONARY TECH FOUNDERS.
+                    </div>
+                </div>
+            </div>
+            <div class="service-item" onclick="toggleService(this)">
+                <div class="service-main">
+                    <span class="service-number">03</span>
+                    <span class="service-name">WEB DEVELOPMENT</span>
+                    <img src="./asset/tag.png" alt="Tag" class="service-tag">
+                </div>
+                <div class="service-desc-wrapper">
+                    <div class="service-desc">
+                        HIGH-PERFORMANCE ARCHITECTURES TAILORED FOR SCALE. WE DEPLOY CUTTING-EDGE WEB TECHNOLOGIES TO BUILD FAST, RESPONSIVE, AND SECURE PLATFORMS THAT STAND THE TEST OF TIME AND TRAFFIC.
+                    </div>
+                </div>
+            </div>
+            <div class="service-item" onclick="toggleService(this)">
+                <div class="service-main">
+                    <span class="service-number">04</span>
+                    <span class="service-name">APP DEVELOPMENT</span>
+                    <img src="./asset/tag.png" alt="Tag" class="service-tag">
+                </div>
+                <div class="service-desc-wrapper">
+                    <div class="service-desc">
+                        MOBILE-FIRST SOLUTIONS THAT PUT YOUR BRAND IN THE PALM OF YOUR CUSTOMER'S HAND. FROM CONCEPT TO DEPLOYMENT, WE BUILD SEAMLESS CROSS-PLATFORM APPLICATIONS WITH PEAK PERFORMANCE AT THEIR CORE.
+                    </div>
+                </div>
+            </div>
+            <div class="service-item" onclick="toggleService(this)">
+                <div class="service-main">
+                    <span class="service-number">05</span>
+                    <span class="service-name">AI AUTOMATION</span>
+                    <img src="./asset/tag.png" alt="Tag" class="service-tag">
+                </div>
+                <div class="service-desc-wrapper">
+                    <div class="service-desc">
+                        REVOLUTIONIZING WORKFLOWS WITH INTELLIGENT AGENTS. WE INTEGRATE ADVANCED AI SOLUTIONS TO AUTOMATE REPETITIVE TASKS, OPTIMIZE DECISION-MAKING, AND DRIVE UNPRECEDENTED OPERATIONAL EFFICIENCY FOR YOUR BUSINESS.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- NEW TEAM SECTION -->
+    <section class="team-section" id="team">
+        <div class="team-marquee">
+            <div class="marquee-track">
+                <span>MEET OUR TEAM</span>
+                <img src="./asset/breaker.avif" alt="Breaker">
+                <span>MEET OUR TEAM</span>
+                <img src="./asset/breaker.avif" alt="Breaker">
+                <span>MEET OUR TEAM</span>
+                <img src="./asset/breaker.avif" alt="Breaker">
+                <!-- Duplicate for seamless loop -->
+                <span>MEET OUR TEAM</span>
+                <img src="./asset/breaker.avif" alt="Breaker">
+                <span>MEET OUR TEAM</span>
+                <img src="./asset/breaker.avif" alt="Breaker">
+                <span>MEET OUR TEAM</span>
+                <img src="./asset/breaker.avif" alt="Breaker">
+            </div>
+        </div>
+
+        <div class="team-container">
+            <!-- Card 1 -->
+            <div class="team-card card-harshit">
+                <span class="team-role">BRANCH CREATIVE,DIRECTOR</span>
+                <div class="team-photo-box">
+                    <div class="team-bio">
+                        <p>FROM FOOTBALL TO DESIGNING GREAT VISUALS, DIGITAL PRODUCTS, AND MICRO-INTERACTIONS. CRAFTING DELIGHT AND CONSTANTLY EVOLVING.</p>
+                        <div class="team-socials">
+                            <a href="https://www.instagram.com/harshitgujar__16?igsh=MXRnMGNmOWU0MHJ3Nw==" class="social-icon" target="_blank">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/harshit-gujar-8b8627297" class="social-icon" target="_blank">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="team-overlay">
+                        <span class="team-name">HARSHIT GUJAR</span>
+                        <picture>
+                            <source srcset="./asset/star.avif" type="image/avif">
+                            <img src="./asset/star.png" alt="Star" class="team-star" onclick="toggleBio(this)">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="team-card card-amaan">
+                <span class="team-role">BRANCH CREATIVE,DIRECTOR</span>
+                <div class="team-photo-box">
+                    <div class="team-bio">
+                        <p>CREATIVE STRATEGIST FOCUSED ON BRIDGING THE GAP BETWEEN ABSOLUTE VISION AND MEASURABLE EXECUTION.</p>
+                        <div class="team-socials">
+                            <a href="https://www.instagram.com/amaann.ahmedd?igsh=MXRmbDUyOW9vcHl0ZA==" class="social-icon" target="_blank">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/syed-amaan-ahmed-69b722297?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-icon" target="_blank">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="team-overlay">
+                        <span class="team-name">AMAAN AHMED</span>
+                        <picture>
+                            <source srcset="./asset/star.avif" type="image/avif">
+                            <img src="./asset/star.png" alt="Star" class="team-star" onclick="toggleBio(this)">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="team-card card-mukunda">
+                <span class="team-role">BRANCH CREATIVE,DIRECTOR</span>
+                <div class="team-photo-box">
+                    <div class="team-bio">
+                        <p>TECHNICAL DIRECTOR PUSHING THE BOUNDARIES OF WEB INTERACTIVITY AND PEAK DIGITAL PERFORMANCE.</p>
+                        <div class="team-socials">
+                            <a href="https://www.instagram.com/_mukunda.b?utm_source=qr&igsh=NWdrdzg5bWltaXA2" class="social-icon" target="_blank">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/mukunda-bhanot-16799727b?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-icon" target="_blank">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="team-overlay">
+                        <span class="team-name">MUKUNDA BHANOT</span>
+                        <picture>
+                            <source srcset="./asset/star.avif" type="image/avif">
+                            <img src="./asset/star.png" alt="Star" class="team-star" onclick="toggleBio(this)">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW FOOTER SECTION -->
+    <footer class="footer-section" id="footer">
+        <!-- Top corners -->
+        <div class="footer-top">
+            <div class="footer-vision-left">
+                WHERE VISION MEETS ABSOLUTE<br>EXECUTION.
+            </div>
+            <div class="footer-vision-right">
+                WHERE VISION MEETS ABSOLUTE<br>EXECUTION.
+            </div>
+        </div>
+
+        <!-- Center Call to Action -->
+        <div class="footer-center">
+            <img src="./asset/mascot (1).png" alt="Lets Work Together Graphic" class="footer-mascot">
+        </div>
+
+        <!-- Email link -->
+        <div class="footer-email">
+            <a href="mailto:ARKENCREATIVES@GMAIL.COM">ARKENCREATIVES@GMAIL.COM</a>
+        </div>
+
+        <!-- Bottom Links -->
+        <div class="footer-bottom">
+            <a href="https://x.com/ArkenCreatives" class="footer-link" target="_blank">X</a>
+            <a href="https://www.instagram.com/arkencreatives?igsh=NnJiOGQyNXk4ejZy" class="footer-link" target="_blank">INSTAGRAM</a>
+            <a href="https://www.linkedin.com/company/arken-creatives/" class="footer-link" target="_blank">LINKEDIN</a>
+            <a href="#home" class="footer-btn">BACK TO TOP</a>
+        </div>
+    </footer>
+
+    <script>
+        // Loading Screen Logic
+        window.addEventListener('DOMContentLoaded', () => {
+            const loader = document.getElementById('loader');
+            const percentageText = document.getElementById('loaderPercentage');
+            const mascot = document.querySelector('.loader-mascot');
+            
+            if (sessionStorage.getItem('hasLoaded')) {
+                // If already loaded in this session, hide the loader immediately
+                loader.style.display = 'none';
+            } else {
+                let percentage = 0;
+                const interval = setInterval(() => {
+                    percentage += Math.floor(Math.random() * 5) + 2;
+                    if (percentage >= 100) {
+                        percentage = 100;
+                        clearInterval(interval);
+                        setTimeout(() => {
+                            window.scrollTo(0, 0); // Reset scroll to top
+                            loader.classList.add('reveal');
+                            sessionStorage.setItem('hasLoaded', 'true');
+                        }, 500);
+                    }
+                    percentageText.innerText = percentage + '%';
+                }, 50);
+            }
+
+            // Drag Functionality for Mascot
+            let isDragging = false;
+            let offset = { x: 0, y: 0 };
+
+            mascot.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                offset = {
+                    x: mascot.offsetLeft - e.clientX,
+                    y: mascot.offsetTop - e.clientY
+                };
+                mascot.style.cursor = 'grabbing';
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (isDragging) {
+                    mascot.style.position = 'absolute';
+                    mascot.style.left = (e.clientX + offset.x) + 'px';
+                    mascot.style.top = (e.clientY + offset.y) + 'px';
+                    mascot.style.margin = '0'; // Prevent centering interference
+                }
+            });
+
+            document.addEventListener('mouseup', () => {
+                isDragging = false;
+                mascot.style.cursor = 'grab';
+            });
+
+            mascot.addEventListener('click', () => {
+                console.log('Song playing... (Placeholder)');
+                // If you have an audio file, add: new Audio('song.mp3').play();
+            });
+        });
+
+        function toggleBio(element) {
+            const card = element.closest('.team-card');
+            card.classList.toggle('active');
+        }
+
+        function toggleService(element) {
+            element.classList.toggle('active');
+        }
+
+        function setProject(element, targetUrl) {
+            const carousel = document.getElementById('projectCarousel');
+            const cards = carousel.querySelectorAll('.project-card');
+            
+            // If already active, navigate to the project page
+            if (element.classList.contains('active')) {
+                window.location.href = targetUrl;
+                return;
+            }
+            
+            // Remove active from all
+            cards.forEach(c => c.classList.remove('active'));
+            
+            // Add to clicked
+            element.classList.add('active');
+            
+            // Re-order the DOM for the "sliding" effect
+            // We want the active one to stay leading the view, but the user wants right-to-left feel.
+            // Actually, keep them in order but scroll to it.
+            element.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+
+        // Scroll-stopped detection for the floating nav
+        const floatingNav = document.getElementById('floatingNav');
+        let isScrolling;
+        let ticking = false;
+
+        window.addEventListener('scroll', function (event) {
+            // Immediately hide on any scroll activity
+            floatingNav.classList.remove('visible');
+            
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    window.clearTimeout(isScrolling);
+
+                    isScrolling = setTimeout(function() {
+                        const scrollPos = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+                        const heroHeight = window.innerHeight;
+
+                        if (scrollPos > heroHeight * 0.7) {
+                            floatingNav.classList.add('visible');
+                        }
+                    }, 200);
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+    </script>
+</body>
+</html>
