@@ -363,31 +363,92 @@
     </footer>
 
     <script>
-        // Loading Screen Logic
+        // Real Loading Screen Logic
         window.addEventListener('DOMContentLoaded', () => {
             const loader = document.getElementById('loader');
             const percentageText = document.getElementById('loaderPercentage');
             const mascot = document.querySelector('.loader-mascot');
             
-            if (sessionStorage.getItem('hasLoaded')) {
-                // If already loaded in this session, hide the loader immediately
-                loader.style.display = 'none';
-            } else {
-                let percentage = 0;
-                const interval = setInterval(() => {
-                    percentage += Math.floor(Math.random() * 5) + 2;
-                    if (percentage >= 100) {
-                        percentage = 100;
-                        clearInterval(interval);
-                        setTimeout(() => {
-                            window.scrollTo(0, 0); // Reset scroll to top
-                            loader.classList.add('reveal');
-                            sessionStorage.setItem('hasLoaded', 'true');
-                        }, 500);
-                    }
-                    percentageText.innerText = percentage + '%';
-                }, 50);
+            // 1. Collect all assets to track
+            const images = Array.from(document.images);
+            const videos = Array.from(document.querySelectorAll('video'));
+            const sources = Array.from(document.querySelectorAll('source[srcset]'));
+            
+            // Extract unique URLs
+            const assetUrls = new Set();
+            images.forEach(img => { if(img.src) assetUrls.add(img.src); });
+            sources.forEach(source => { 
+                const url = source.srcset.split(' ')[0];
+                if(url) assetUrls.add(url); 
+            });
+            
+            const totalAssets = assetUrls.size + videos.length;
+            let loadedCount = 0;
+            let displayPercentage = 0;
+            let targetPercentage = 0;
+
+            // Lock scroll
+            document.body.style.overflow = 'hidden';
+
+            function updateProgress() {
+                loadedCount++;
+                targetPercentage = Math.min(100, Math.floor((loadedCount / totalAssets) * 100));
             }
+
+            // Smoothly animate percentage
+            function animatePercentage() {
+                if (displayPercentage < targetPercentage) {
+                    // Fast catch up if distance is large
+                    const diff = targetPercentage - displayPercentage;
+                    const step = Math.max(1, Math.floor(diff / 10));
+                    displayPercentage += step;
+                    percentageText.innerText = displayPercentage + '%';
+                }
+                
+                if (displayPercentage < 100 || targetPercentage < 100) {
+                    requestAnimationFrame(animatePercentage);
+                } else {
+                    // Final reveal
+                    setTimeout(() => {
+                        window.scrollTo(0, 0);
+                        loader.classList.add('reveal');
+                        document.body.style.overflow = ''; // Unlock scroll
+                    }, 800);
+                }
+            }
+            requestAnimationFrame(animatePercentage);
+
+            // 2. Start Loading Trackers
+            if (totalAssets === 0) {
+                targetPercentage = 100;
+            } else {
+                // Track Images
+                assetUrls.forEach(url => {
+                    const img = new Image();
+                    img.onload = updateProgress;
+                    img.onerror = updateProgress; // Don't get stuck on failed assets
+                    img.src = url;
+                });
+
+                // Track Videos
+                videos.forEach(video => {
+                    if (video.readyState >= 3) {
+                        updateProgress();
+                    } else {
+                        video.addEventListener('canplaythrough', updateProgress, { once: true });
+                        video.addEventListener('error', updateProgress, { once: true });
+                        // Timeout for video
+                        setTimeout(() => {
+                            if (video.readyState < 3) updateProgress();
+                        }, 5000);
+                    }
+                });
+            }
+
+            // Safety net: Window Load event
+            window.addEventListener('load', () => {
+                targetPercentage = 100;
+            });
 
             // Drag Functionality for Mascot
             let isDragging = false;
@@ -417,8 +478,7 @@
             });
 
             mascot.addEventListener('click', () => {
-                console.log('Song playing... (Placeholder)');
-                // If you have an audio file, add: new Audio('song.mp3').play();
+                console.log('Mascot clicked!');
             });
         });
 
