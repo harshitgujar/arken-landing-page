@@ -576,7 +576,7 @@ body {
     letter-spacing: 0.05em;
     margin-bottom: 8px;
     text-transform: uppercase;
-    color: #444; 
+    color: #7a7a7a; /* Adjusted grey for better universal visibility */
 }
 
 .team-photo-box {
@@ -619,7 +619,7 @@ body {
     font-size: 12px;
     font-family: 'Helvetica', Arial, sans-serif;
     letter-spacing: 0.02em;
-    color: #111;
+    color: #7a7a7a; /* Adjusted grey for better universal visibility */
     margin-bottom: 5px;
     text-transform: uppercase;
     white-space: nowrap; /* Avoid wrapping the name */
@@ -633,6 +633,7 @@ body {
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.35));
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer; /* Indicate it is clickable */
+    mix-blend-mode: normal; /* Reset to normal */
 }
 
 .team-card.active .team-star {
@@ -774,6 +775,12 @@ body {
     font-family: 'Helvetica', Arial, sans-serif;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+}
+
+.footer-socials, .footer-actions {
+    display: flex;
+    align-items: center;
+    gap: 3vw;
 }
 
 .footer-link {
