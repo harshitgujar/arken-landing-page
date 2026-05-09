@@ -808,3 +808,83 @@ body {
     color: #000000;
     transform: translateY(-2px);
 }
+/* --- MOBILE OPTIMIZATION --- */
+@media (max-width: 768px) {
+    .team-container {
+        transform: none; /* Remove global horizontal shift */
+        gap: 10vh;
+    }
+
+    .team-card {
+        width: 80vw; /* Occupy more width on mobile */
+        transform: none !important; /* Remove individual shifts */
+    }
+
+    .team-overlay {
+        right: 5%; /* Nudge name/star slightly inward */
+        transform: translateY(-50%);
+    }
+
+    .team-bio {
+        position: relative;
+        left: 0;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+        top: 0;
+        clip-path: none;
+        opacity: 1;
+        pointer-events: auto;
+        display: none; /* Hide by default, show when active */
+    }
+
+    .team-card.active .team-bio {
+        display: block;
+        opacity: 1;
+    }
+
+    .team-name {
+        font-size: 14px;
+    }
+
+    /* General layout adjustments */
+    .nav-bar, .floating-nav {
+        gap: 5vw;
+    }
+
+    .headline {
+        white-space: normal;
+        font-size: clamp(24px, 10vw, 40px);
+    }
+
+    .logo-image {
+        transform: scale(1) translateY(20px);
+    }
+
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-vision-left, .footer-vision-right {
+        text-align: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-socials, .footer-actions {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .about-logo {
+        width: 70vw;
+        transform: translate(0, 50px);
+    }
+}
