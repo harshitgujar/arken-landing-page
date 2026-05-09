@@ -75,6 +75,10 @@ body, html {
     scroll-behavior: smooth;
 }
 
+section {
+    scroll-margin-top: 100px; /* Space for the floating navbar */
+}
+
 body {
     /* Background properties */
     background-color: #e5edf5; /* Fallback color for clouds */
@@ -990,7 +994,8 @@ body {
     .team-name {
         font-size: 16px;
         margin-bottom: 0;
-        color: #111; /* Ensure visibility against light background */
+        color: #111;
+        white-space: normal; /* Allow name to wrap if needed on small screens */
     }
 
     .team-star {
@@ -1004,11 +1009,12 @@ body {
         margin-left: 0 !important;
         margin-top: 15px !important;
         top: 0 !important;
+        transform: none !important; /* Fix overlap caused by desktop translateY(-50%) */
         clip-path: none !important;
         opacity: 1;
         pointer-events: auto;
         display: none;
-        text-align: left; /* Better for mobile readability */
+        text-align: left;
         padding: 0 10px;
         z-index: 5;
     }
