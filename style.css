@@ -810,19 +810,173 @@ body {
 }
 /* --- MOBILE OPTIMIZATION --- */
 @media (max-width: 768px) {
-    .team-container {
-        transform: none; /* Remove global horizontal shift */
+    /* HERO SECTION */
+    .hero-container {
+        justify-content: center;
+        gap: 5vh;
+        padding: 10vh 5vw;
+    }
+
+    .headline {
+        white-space: normal;
+        font-size: clamp(24px, 10vw, 40px);
+        line-height: 1.1;
+    }
+
+    .subheadline {
+        font-size: 14px;
+        br { display: none; } /* Remove line breaks for better wrapping */
+    }
+
+    .nav-bar {
+        display: none; /* Hide primary nav on mobile, rely on floating or simplified nav */
+    }
+
+    .floating-nav {
+        gap: 3vw;
+        width: 90%;
+        justify-content: space-evenly;
+    }
+
+    .floating-nav .nav-button {
+        padding: 6px 3vw;
+        font-size: 10px;
+    }
+
+    .logo-image {
+        transform: scale(1.1) translateY(20px);
+        width: 120%; /* Make it pop more on mobile */
+    }
+
+    /* PROJECTS SECTION */
+    .projects-carousel {
+        flex-direction: column;
+        height: auto;
+        padding: 5vh 10vw;
         gap: 10vh;
+        overflow-y: visible;
+    }
+
+    .project-card {
+        flex: 0 0 auto;
+        width: 100%;
+        opacity: 1;
+        align-items: center;
+        text-align: center;
+    }
+
+    .project-card.active {
+        width: 100%;
+    }
+
+    .project-img {
+        height: 40vh !important;
+        border-radius: 12px;
+    }
+
+    .project-name {
+        opacity: 1;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    .what-we-do-img {
+        width: 70%;
+        transform: translate(-50%, -30%);
+    }
+
+    /* ABOUT SECTION */
+    .about-section {
+        padding: 10vh 5vw;
+        min-height: auto;
+    }
+
+    .about-content {
+        gap: 5vh;
+    }
+
+    .about-text {
+        font-size: 16px;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    .about-illustration {
+        width: 100%;
+        opacity: 0.3; /* Fade back to keep text readable */
+    }
+
+    .about-logo {
+        width: 70vw;
+        transform: none;
+        margin-top: 2vh;
+    }
+
+    /* SERVICES SECTION */
+    .services-header {
+        margin-bottom: 5vh;
+    }
+
+    .service-main {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2vh;
+        padding: 4vh 0;
+    }
+
+    .service-number {
+        flex: none;
+        font-size: 24px;
+    }
+
+    .service-name {
+        flex: none;
+        font-size: 20px;
+    }
+
+    .service-desc {
+        padding: 0 5% 4vh 5%;
+        text-align: center;
+    }
+
+    /* TEAM SECTION */
+    .team-marquee span {
+        font-size: 30px;
+    }
+
+    .team-container {
+        transform: none !important;
+        gap: 8vh;
+        padding: 0 5vw;
     }
 
     .team-card {
-        width: 80vw; /* Occupy more width on mobile */
-        transform: none !important; /* Remove individual shifts */
+        width: 85vw;
+        max-width: 320px;
+        transform: none !important;
+        margin: 0 auto;
     }
 
     .team-overlay {
-        right: 5%; /* Nudge name/star slightly inward */
-        transform: translateY(-50%);
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        margin-top: 15px;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .team-name {
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+
+    .team-star {
+        width: 40px;
     }
 
     .team-bio {
@@ -835,32 +989,19 @@ body {
         clip-path: none;
         opacity: 1;
         pointer-events: auto;
-        display: none; /* Hide by default, show when active */
+        display: none;
+        text-align: center;
     }
 
     .team-card.active .team-bio {
         display: block;
-        opacity: 1;
     }
 
-    .team-name {
-        font-size: 14px;
+    .team-socials {
+        justify-content: center;
     }
 
-    /* General layout adjustments */
-    .nav-bar, .floating-nav {
-        gap: 5vw;
-    }
-
-    .headline {
-        white-space: normal;
-        font-size: clamp(24px, 10vw, 40px);
-    }
-
-    .logo-image {
-        transform: scale(1) translateY(20px);
-    }
-
+    /* FOOTER SECTION */
     .footer-top {
         flex-direction: column;
         align-items: center;
@@ -870,6 +1011,24 @@ body {
 
     .footer-vision-left, .footer-vision-right {
         text-align: center;
+        font-size: 11px;
+    }
+
+    .footer-center {
+        margin: 4vh 0;
+    }
+
+    .footer-mascot {
+        width: 95vw;
+    }
+
+    .footer-email {
+        margin-bottom: 5vh;
+    }
+
+    .footer-email a {
+        font-size: 16px;
+        padding: 10px 25px;
     }
 
     .footer-bottom {
@@ -882,9 +1041,5 @@ body {
         gap: 15px;
         align-items: center;
     }
-
-    .about-logo {
-        width: 70vw;
-        transform: translate(0, 50px);
-    }
 }
+
