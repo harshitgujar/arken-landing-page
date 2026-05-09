@@ -958,21 +958,37 @@ body {
         margin: 0 auto;
     }
 
+    .team-photo-box {
+        height: auto;
+        aspect-ratio: auto;
+    }
+
+    .team-photo {
+        position: relative;
+        height: auto;
+        width: 100%;
+        display: block;
+    }
+
     .team-overlay {
         position: relative;
         right: auto;
         top: auto;
         transform: none;
         margin-top: 15px;
+        display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
         width: 100%;
-        padding: 0 10px;
+        padding: 0 5px;
+        z-index: 10;
     }
 
     .team-name {
         font-size: 16px;
         margin-bottom: 0;
+        color: #111; /* Ensure visibility against light background */
     }
 
     .team-star {
