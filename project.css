@@ -21,7 +21,8 @@
     position: fixed;
     top: 20px;
     left: 50%;
-    transform: translate(-50%, -100%); /* Start above the screen */
+    transform: translate(-50%, -100%);
+    /* Start above the screen */
     z-index: 1000;
     transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     opacity: 0;
@@ -30,19 +31,22 @@
 
 .back-to-home.visible {
     opacity: 1;
-    transform: translate(-50%, 0); /* Drop down to position */
+    transform: translate(-50%, 0);
+    /* Drop down to position */
     pointer-events: auto;
 }
 
 .back-to-home:hover {
-    transform: translate(-50%, 5px) scale(1.05); /* Slight move down and scale on hover */
+    transform: translate(-50%, 5px) scale(1.05);
+    /* Slight move down and scale on hover */
 }
 
 .back-img {
-    height: clamp(25px, 3.5vw, 45px); /* Reduced size */
+    height: clamp(25px, 3.5vw, 45px);
+    /* Reduced size */
     width: auto;
     display: block;
-    filter: drop-shadow(0 12px 25px rgba(0,0,0,0.3)) drop-shadow(0 6px 6px rgba(0,0,0,0.2));
+    filter: drop-shadow(0 12px 25px rgba(0, 0, 0, 0.3)) drop-shadow(0 6px 6px rgba(0, 0, 0, 0.2));
 }
 
 .hocl-title-container {
@@ -78,14 +82,14 @@
 
 .hocl-pill {
     padding: 15px 35px;
-    border: 1px solid rgba(0,0,0,0.15);
+    border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 50px;
     font-size: clamp(10px, 1vw, 14px);
     letter-spacing: 0.05em;
     font-family: 'Helvetica', Arial, sans-serif;
     background: #ffffff;
     color: #111;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .glass-pill {
@@ -93,7 +97,7 @@
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .hocl-subtitle {
@@ -131,4 +135,35 @@
     height: auto;
     display: block;
     object-fit: cover;
+}
+
+/* Mobile Responsiveness for Project Page */
+@media (max-width: 768px) {
+    .hocl-title-container {
+        flex-direction: column;
+        padding: 0 5vw;
+    }
+
+    .hocl-title {
+        font-size: clamp(40px, 15vw, 80px);
+        width: 100%;
+    }
+
+    .hocl-pills-overlay {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin-top: 40px;
+        width: 90%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hocl-pill {
+        padding: 10px 20px;
+        font-size: 10px;
+        text-align: center;
+    }
 }
