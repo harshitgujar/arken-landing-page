@@ -139,6 +139,12 @@
 
 /* Mobile Responsiveness for Project Page */
 @media (max-width: 768px) {
+    .hocl-header-wrapper {
+        height: auto !important;
+        min-height: 0 !important;
+        padding-bottom: 20px;
+    }
+
     .hocl-title-container {
         flex-direction: column;
         padding: 0 5vw;
@@ -154,7 +160,7 @@
         top: auto;
         left: auto;
         transform: none;
-        margin-top: 40px;
+        margin-top: 20px;
         width: 90%;
         flex-wrap: wrap;
         justify-content: center;
@@ -165,5 +171,14 @@
         padding: 10px 20px;
         font-size: 10px;
         text-align: center;
+    }
+
+    .hocl-subtitle {
+        margin-top: 25px;
+        margin-bottom: 0;
+    }
+
+    .hocl-full-video {
+        display: none;
     }
 }
